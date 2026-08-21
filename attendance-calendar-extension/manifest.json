@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "智慧园区考勤日历配色",
+  "version": "1.0.0",
+  "description": "循环切换考勤日期颜色，并同步生成本地考勤详情。",
+  "content_scripts": [
+    {
+      "matches": ["http://face.ict.ac.cn:4434/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": ["http://face.ict.ac.cn:4434/*"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "attendance-calendar-color@local",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
+}
